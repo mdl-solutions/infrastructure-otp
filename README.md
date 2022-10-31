@@ -1,5 +1,6 @@
 # otp.py
 Command-line OTP calculator, with automatic password creation/storage.
+This fork has a small modification that allows the user to replace the generated password with 'ask' in the .otp file to enable an interactive password prompt, so that saving the password in plain text can be avoided.
 
 # Apache Specific
 The Apache Software Foundation (ASF) uses the
