@@ -13,6 +13,7 @@ import hashlib
 import subprocess
 import platform
 import re
+import getpass
 
 try:
   import pyotp
@@ -215,6 +216,9 @@ def main():
     pwd, algo = pwds[seed]
     if old_algo and algo != old_algo:
       print('NOTE: switched to "%s" algorithm' % (algo,))
+
+  if pwd == 'ask'.encode():
+    pwd = getpass.getpass('Enter secret pass phrase: ').encode()
 
   processor = ALGOS.get(algo)
   assert processor, 'Unknown/unsupported algorithm: "%s"' % (algo,)
